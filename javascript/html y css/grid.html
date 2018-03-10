@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grid</title>
+    <style>
+      #contenedor{
+        background: gray;
+        width: 800px;
+        height: 800px;
+        margin: auto;
+
+      }
+      #columa-uno{
+        background: red;
+        width: 79%;
+        height:800px;
+        display: inline-block;
+      }
+      #columa-dos{
+        background: green;
+        width: 20%;
+        height:800px;
+        display: inline-block;
+      }
+      .sub-col{
+        width: 50%;
+        height: 798px;
+        background-color: blue;
+
+        float: left;
+      }
+      .fila{
+        background-color: yellow;
+        width: 98%;
+        height: 49%;
+        border: 1px solid;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="columa-uno">
+        <div class="sub-col">
+          <div class="fila">
+
+          </div>
+          <div class="fila">
+
+          </div>
+        </div>
+        <div class="sub-col">
+          <div class="fila">
+
+          </div>
+          <div class="fila">
+
+          </div>
+        </div>
+      </div>
+      <div id="columa-dos">
+
+      </div>
+    </div>
+  </body>
+</html>

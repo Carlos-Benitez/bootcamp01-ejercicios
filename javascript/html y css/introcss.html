@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <style media="screen">
+      p{
+        color: white;
+        background-color: black;
+        font-size: 30px;
+        font-family: arial;
+
+        /* max-height: el alto máximo un elemento */
+
+        /* overflow: cuando el contenido pasa el tamaño máximo del elemento -hidden: esconde - auto: genera un scroll*/
+
+        /* margin: auto calcula la distancia de forma automática */
+
+        /* se puede mesclar varios tipos de medidas de elemento por ejemplo  width:60% px; max-width:200px*/
+
+        /* elementos inline no se puede modificar sus atributos de alto o ancho sólo los de tipo block */
+      }
+      #fondo-verde{
+        background-color: green;
+      }
+      .fondo-azul{
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- boxmodel estructura de cajas de html
+          para espaciar los bordes se tiene en cuenta el sentido reloj-->
+    <p id="fondo-verde"=>Este es el primer parrafo</p>
+
+    <p class="fondo-azul">Este es el segundo parrafo</p>
+
+    <p >Este es el tercer parrafo</p>
+
+    <p class="fondo-azul">Este es el cuarto parrafo</p>
+
+    <p>Este es el quinto parrafo</p>
+  </body>
+</html>
