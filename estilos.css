@@ -13,4 +13,6 @@ aside{
 footer{
   background: #16a085;
   color: #fff;
+  height: 60px;
+  text-align: center;
 }

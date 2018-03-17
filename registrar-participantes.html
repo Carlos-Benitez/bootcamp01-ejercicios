@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do app</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/3.3.7+1/css/sb-admin-2.css">
+     <!-- daterange picker -->
+     <link rel="stylesheet" href="css/daterangepicker.css">
+     <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+
+
+
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <nav class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">GDG CDE</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+          <li> <a href="#">Mi perfil</a> </li>
+          <li> <a href="#">Cerrar Sesión</li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+          <ul class="nav" id="side-menu">
+            <li>
+              <a href="#">Eventos</a>
+            </li>
+            <li>
+              <a href="#">Talleres</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main id="page-wrapper">
+        <div class="row">
+          <h1 class="page-header">Registro de participantes</h1>
+        </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              A travéz de este formulario se registran los participantes
+            </div>
+            <div class="panel-body">
+
+              <div class="row">
+                <div class="col-md-12">
+
+                  <form id="evento">
+
+                    <div class="row">
+
+                      <div class="form-group col-md-6" >
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" class="form-control" placeholder="ejemplo@correo.com">
+                      </div>
+
+                    </div>
+
+                    <div class="row">
+
+                      <div class="form-group col-md-6" >
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre">
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" class="form-control" placeholder="Ingrese sus apellidos">
+                      </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                      <div class="form-group col-md-6">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="Ingrese su dirección">
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="ciudad">Ciudad</label>
+                          <select class="form-control" name="ciudad" id="ciudad">
+                            <option>CDE</option>
+                            <option>Asunción</option>
+                            <option>Encarnación</option>
+                          </select>
+                      </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                      <div class="form-group col-md-4">
+                        <label for="celular">Celular</label>
+                        <input type="text" id="celular" class="form-control" placeholder="Ingrese su número telefónico">
+                      </div>
+
+                       <div class='col-sm-4'>
+
+
+                          <div class="form-group">
+                            <label>Fecha de Nacimiento:</label>
+
+                            <div class="input-group date">
+                              <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                              </div>
+
+                                <input type="text" class="form-control"  id="fechaNac" placeholder="Ingresar fecha nacimiento" data-inputmask="'alias': 'dd/mm/-año'" data-mask>
+                            </div>
+
+                          </div>
+
+                       </div>
+
+                       <div class="form-group col-sm-4">
+                         <label for="genero">Genero</label>
+                           <select class="form-control"  id="genero">
+                             <option disabled selected>Seleccione una opción</option>
+                             <option>Masculino</option>
+                             <option>Femenino</option>
+                             <option>Sin Genero</option>
+
+                           </select>
+                       </div>
+
+                   </div>
+
+                   <div class="row">
+
+                     <div class="form-group col-md-6">
+                       <label for="universidad">Universidad</label>
+                       <input type="text" class="form-control" id="universidad" placeholder="nombre de su univeridad">
+                     </div>
+                     <div class="form-group col-md-6" >
+                       <label for="carrera">Carreta</label>
+                       <input type="text" id="carrera" class="form-control" placeholder="Carrera cursada">
+                     </div>
+
+                   </div>
+
+                   <div class="row">
+
+                     <div class="form-group col-md-12">
+                       <label for="foto">Seleccione foto de perfil</label>
+                       <input type="file" id="foto">
+                       <img src="anonimo.png" alt="foto anonima de usuario" class="img-thumbnail" width="100px" style="margin-top:20px">
+
+                   </div>
+                   <div class="row" style="padding-left:30px">
+
+                       <button type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
+
+                   </div>
+
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        </main>
+      </div>
+    <footer style="height=200px"> <h3>Pie de página</h3> </footer>
+    </div>
+    <script>
+      //var nombre = document.getElementById('nombre');
+      //console.log(nombre);
+      function enviarDatos(){
+
+        var email = document.getElementById('email').value
+        var nombre = document.getElementById('nombre').value;
+        var apellido = document.getElementById('apellido').value
+        var direccion = document.getElementById('direccion').value
+        var ciudad = document.getElementById('ciudad').value
+        var celular = document.getElementById('celular').value
+        var fechaNac = document.getElementById('fechaNac').value
+        var genero = document.getElementById('genero').value
+        var universidad = document.getElementById('universidad').value
+        var carrera = document.getElementById('carrera').value
+        var foto = document.getElementById('foto').value
+
+
+        console.log(email);
+        console.log("_____________________");
+        console.log(nombre);
+        console.log("_____________________");
+        console.log(apellido);
+        console.log("_____________________");
+        console.log(direccion);
+        console.log("_____________________");
+        console.log(ciudad);
+        console.log("_____________________");
+        console.log(celular);
+        console.log("_____________________");
+        console.log(fechaNac);
+        console.log("_____________________");
+        console.log(genero);
+        console.log("_____________________");
+        console.log(universidad);
+        console.log("_____________________");
+        console.log(carrera);
+        console.log("_____________________");
+        console.log(foto);
+        console.log("_____________________");
+
+
+      }
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.inputmask.js"></script>
+    <script src="js/jquery.inputmask.date.extensions.js"></script>
+    <script src="js/jquery.inputmask.extensions.js"></script>
+
+    <script>
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/-año', { 'placeholder': 'dd/mm/-año' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/-año', { 'placeholder': 'mm/dd/-año' })
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+
+    </script>
+
+
+  </body>
+</html>

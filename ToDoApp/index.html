@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>To do App</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="estilos.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/3.3.7+1/css/sb-admin-2.css">
+
+  </head>
+  <body ng-app="todoApp">
+    <h3>Lista de tareas</h3>
+    
+    
+    <div class="container" ng-controller="tareaController">
+        <form role="form" ng-submit="agregarTarea()">
+            <legend>Nueva Tarea</legend>
+          
+            <div class="form-group">
+              <label for="descripcion">Descripcion</label>
+              <input type="text" id="descripcion"class="form-control"  placeholder="Descripcion"  ng-model="nuevaTarea.descripcion">
+              
+            </div>
+          
+            <button type="submit" class="btn btn-primary">Grabart</button>
+            
+            <div class="table-responsive" >
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Tarea a realizar</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="tar in tareas track by $index">
+                  <tr>
+                    <td>{{tar.descripcion}}</td>
+                  </tr>
+                
+                </tbody>
+              </table>
+            </div>
+            
+          
+            
+          </form>
+    </div>
+    
+    
+    
+
+
+
+
+
+
+
+    
+    <!-- <script  src="https://code.jquery.com/jquery-1.12.4.min.js"  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" -->
+    <!-- crossorigin="anonymous"></script> -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+    <script>
+      angular.module('todoApp',['ui.bootstrap']);
+   
+    </script>
+    <script src="tareaController.js"></script>
+  </body>
+
+</html>
