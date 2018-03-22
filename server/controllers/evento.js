@@ -13,13 +13,13 @@ module.exports = {
     },
     //retornar un evento
     show (req, res){
-        evento.findById(req-params.id,{})
+        evento.findById(req.params.id,{})
         .then(function(evento){
             res.status(200).json(evento);
         })
         .catch(function(error){
             res.status(500).json(error);
-        });    
+        });
 
     //
     },
@@ -30,7 +30,7 @@ module.exports = {
         })
         .catch(function(error){
             res.status(500).json(error);
-        });    
+        });
 
     },
 
@@ -46,7 +46,7 @@ module.exports = {
         })
         .catch(function(error){
             res.status(500).json(error);
-        });    
+        });
 
     },
 
@@ -63,7 +63,7 @@ module.exports = {
         })
         .catch(function(error){
             res.status(500).json(error);
-        });    
+        });
 
     }
 

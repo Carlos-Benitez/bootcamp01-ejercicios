@@ -1,5 +1,6 @@
 
 var express = require('express');
+var cors = require('cors');
 var app = express();
 
 var morgan = require('morgan'); //log request to the console
@@ -9,7 +10,8 @@ var methodOverride = require('method-override'); //simula DELETE y PUT
 var routes = require('./server/routes'); // importa las rutas que tenemos con el express
 var eventos = require('./server/controllers/evento'); //importa el controlador de eventos
 
-//servir contenidos estáricos del directorio
+app.use(cors());
+//servir contenidos estáricos del directorio    
 app.use(express.static(__dirname));
 
 app.use(morgan('dev'));
@@ -28,7 +30,7 @@ models.sequelize
         console.log("Error "+ error);
     });
 
-    app.listen(3000, function(){
-        console.log("App listening on port 3000");
+    app.listen(2000, function(){
+        console.log("App listening on port 2000");
 });
 
